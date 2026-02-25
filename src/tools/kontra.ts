@@ -31,25 +31,11 @@ export function registerKontraTool(server: McpServer, defaultMode: KontraMode): 
     kontraSchema,
     async (args) => {
       const mode = args.mode || defaultMode;
+      const isFreeMode = FREE_MODES.includes(mode);
 
-      logger.info(`kontra tool called`, { mode, statementLength: args.statement.length });
-
-      if (!FREE_MODES.includes(mode)) {
-        const builder = PROMPT_BUILDERS[mode];
-        return {
-          content: [{ type: 'text' as const, text: builder(args.statement, args.context) }],
-        };
-      }
+      logger.info('kontra tool called', { mode, isFreeMode, statementLength: args.statement.length });
 
       const builder = PROMPT_BUILDERS[mode];
-      if (!builder) {
-        logger.error(`Unknown mode: ${mode}`);
-        return {
-          content: [{ type: 'text' as const, text: `Unknown mode: ${mode}. Available modes: counter, probe, redteam, premortem.` }],
-          isError: true,
-        };
-      }
-
       const prompt = builder(args.statement, args.context);
 
       logger.debug('Generated prompt', { mode, promptLength: prompt.length });
