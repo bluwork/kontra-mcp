@@ -1,13 +1,17 @@
+import { createRequire } from 'node:module';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import type { ServerConfig } from '../types.js';
 import { registerKontraTool } from '../tools/kontra.js';
 import * as logger from '../utils/logger.js';
 
+const require = createRequire(import.meta.url);
+const { version } = require('../../package.json') as { version: string };
+
 export async function setupServer(config: ServerConfig): Promise<void> {
   const server = new McpServer({
     name: 'kontra-mcp',
-    version: '0.1.0',
+    version,
   });
 
   registerKontraTool(server, config.defaultMode);

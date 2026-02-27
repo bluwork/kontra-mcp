@@ -55,10 +55,8 @@ if (args.includes('--version') || args.includes('-v')) {
   }
 }
 
-const filteredArgs = args.filter((arg) => !['--help', '-h', '--version', '-v'].includes(arg));
-
 const serverPath = join(__dirname, '..', 'dist', 'index.js');
-const nodeProcess = spawnSync('node', [serverPath, ...filteredArgs], {
+const nodeProcess = spawnSync('node', [serverPath, ...args], {
   stdio: 'inherit',
   shell: process.platform === 'win32',
 });

@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { KontraMode } from '../types.js';
-import { FREE_MODES } from '../types.js';
 import { buildCounterPrompt } from '../prompts/counter.js';
 import { buildProbePrompt } from '../prompts/probe.js';
 import { buildRedteamPrompt } from '../prompts/redteam.js';
@@ -31,9 +30,8 @@ export function registerKontraTool(server: McpServer, defaultMode: KontraMode): 
     kontraSchema,
     async (args) => {
       const mode = args.mode || defaultMode;
-      const isFreeMode = FREE_MODES.includes(mode);
 
-      logger.info('kontra tool called', { mode, isFreeMode, statementLength: args.statement.length });
+      logger.info('kontra tool called', { mode, statementLength: args.statement.length });
 
       const builder = PROMPT_BUILDERS[mode];
       const prompt = builder(args.statement, args.context);

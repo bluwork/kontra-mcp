@@ -11,6 +11,3 @@ export interface ServerConfig {
   logLevel: 'debug' | 'info' | 'warn' | 'error';
 }
 
-export const FREE_MODES: readonly KontraMode[] = ['counter'] as const;
-
-export const PRO_MODES: readonly KontraMode[] = ['probe', 'redteam', 'premortem'] as const;

@@ -64,12 +64,12 @@ Or with additional context:
 
 ## Modes
 
-| Mode | Tier | Description |
-|------|------|-------------|
-| `counter` | Free | Strongest possible argument against your decision. Identifies blind spots, hidden assumptions, counter-arguments, and failure scenarios. |
-| `probe` | Pro | Asks uncomfortable questions without answers. Forces you to confront gaps in your reasoning. |
-| `redteam` | Pro | Generates concrete failure scenarios with likelihood estimates, cascade effects, and mitigations. |
-| `premortem` | Pro | Gary Klein's prospective hindsight: "It failed. Write the postmortem from the future." |
+| Mode | Description |
+|------|-------------|
+| `counter` | Strongest possible argument against your decision. Identifies blind spots, hidden assumptions, counter-arguments, and failure scenarios. |
+| `probe` | Asks uncomfortable questions without answers. Forces you to confront gaps in your reasoning across five lenses: motivation, evidence, alternatives, stakes, and timing. |
+| `redteam` | Generates 3-5 concrete failure scenarios with likelihood estimates, trigger events, cascade effects, early warning signs, and mitigations. Includes an overall vulnerability assessment. |
+| `premortem` | Gary Klein's prospective hindsight: "It failed. Write the postmortem from the future." Produces a full postmortem with narrative, timeline, root causes, missed signals, and lessons learned. |
 
 ## Configuration
 

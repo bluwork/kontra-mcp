@@ -1,10 +1,9 @@
 import { parseConfig } from './config/environment.js';
 import { setupServer } from './server/setup.js';
 import * as logger from './utils/logger.js';
-import { setLogLevel } from './utils/logger.js';
 
 const config = parseConfig();
-setLogLevel(config.logLevel);
+logger.setLogLevel(config.logLevel);
 
 let isShuttingDown = false;
 
