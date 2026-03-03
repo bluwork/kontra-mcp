@@ -57,5 +57,6 @@
     "tsx": "^4.19.0",
     "typescript": "^5.9.3",
     "vitest": "^3.1.0"
-  }
+  },
+  "mcpName": "io.github.bluwork/kontra-mcp"
 }

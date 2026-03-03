@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.bluwork/kontra-mcp",
+  "description": "The Tenth Man Protocol — structured contrarian analysis for decision-makers via MCP. Challenges decisions by identifying blind spots, hidden assumptions, counter-arguments, and failure scenarios across four modes: counter, probe, redteam, and premortem.",
+  "repository": {
+    "url": "https://github.com/bluwork/kontra-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "kontra-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "Default analysis mode (counter|probe|redteam|premortem)",
+          "isRequired": false,
+          "name": "KONTRA_DEFAULT_MODE",
+          "format": "string"
+        },
+        {
+          "description": "Log verbosity (debug|info|warn|error)",
+          "isRequired": false,
+          "name": "KONTRA_LOG_LEVEL",
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
