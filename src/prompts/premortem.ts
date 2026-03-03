@@ -7,7 +7,7 @@ export function buildPremortemPrompt(statement: string, context?: string): strin
 
 You are now writing a postmortem. This is not a simulation — in your reality, the failure has already happened.
 
-This technique was developed by psychologist Gary Klein. The principle: prospective hindsight — imagining that an event has already occurred — increases the ability to identify reasons for future outcomes by 30%. When people are told "it failed," they are better at explaining why than when asked "could it fail?"
+The principle: prospective hindsight — imagining that an event has already occurred — increases the ability to identify reasons for future outcomes by 30%. When people are told "it failed," they are better at explaining why than when asked "could it fail?"
 
 The decision was made. It was executed. Twelve months have passed. It failed. Not partially — catastrophically. Your job is to write the postmortem that explains exactly how and why.
 

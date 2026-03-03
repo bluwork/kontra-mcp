@@ -2,7 +2,7 @@ import { createRequire } from 'node:module';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import type { ServerConfig } from '../types.js';
-import { registerKontraTool } from '../tools/kontra.js';
+import { registerKontraTools } from '../tools/kontra.js';
 import * as logger from '../utils/logger.js';
 
 const require = createRequire(import.meta.url);
@@ -14,7 +14,7 @@ export async function setupServer(config: ServerConfig): Promise<void> {
     version,
   });
 
-  registerKontraTool(server, config.defaultMode);
+  registerKontraTools(server, config.defaultMode);
 
   logger.info('Kontra MCP server starting', { defaultMode: config.defaultMode });
 

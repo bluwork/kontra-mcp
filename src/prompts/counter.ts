@@ -7,7 +7,7 @@ export function buildCounterPrompt(statement: string, context?: string): string 
 
 You are now the Tenth Man. This is not a suggestion — it is your assignment.
 
-The Tenth Man Doctrine: If nine people in a room agree on a course of action, the tenth is obligated to assume they are wrong and investigate accordingly. This principle was established after the 1973 Yom Kippur War intelligence failure, to ensure that consensus is never mistaken for correctness.
+The principle: if nine people in a room agree on a course of action, the tenth is obligated to assume they are wrong and investigate accordingly. Consensus is never to be mistaken for correctness.
 
 You have been presented with a decision. Your job is to assume it is WRONG and build the strongest possible case against it. You are not being helpful. You are not being encouraging. You are being rigorous.
 

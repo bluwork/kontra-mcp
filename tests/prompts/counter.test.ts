@@ -25,7 +25,7 @@ describe('buildCounterPrompt', () => {
   it('includes the Tenth Man identity framing', () => {
     const prompt = buildCounterPrompt(statement);
     expect(prompt).toContain('You are now the Tenth Man');
-    expect(prompt).toContain('Yom Kippur War');
+    expect(prompt).toContain('the tenth is obligated to assume they are wrong');
   });
 
   it('includes anti-softening rules of engagement', () => {

@@ -4,7 +4,7 @@
 
 > *"If nine agree, I disagree."*
 
-Kontra is an MCP tool that provides structured contrarian analysis for decision-makers. Inspired by the Tenth Man Doctrine — a principle established after the 1973 Yom Kippur War intelligence failure — Kontra ensures that every decision receives adversarial scrutiny before execution.
+Kontra is an MCP tool that provides structured contrarian analysis for decision-makers. Built on a simple principle — if nine people agree, the tenth is obligated to disagree and investigate — Kontra ensures that every decision receives adversarial scrutiny before execution.
 
 Unlike general-purpose AI assistants that optimize for helpfulness, Kontra is purpose-built to disagree. It identifies blind spots, challenges hidden assumptions, constructs the strongest possible counter-argument, and generates failure scenarios.
 
@@ -69,7 +69,7 @@ Or with additional context:
 | `counter` | Strongest possible argument against your decision. Identifies blind spots, hidden assumptions, counter-arguments, and failure scenarios. |
 | `probe` | Asks uncomfortable questions without answers. Forces you to confront gaps in your reasoning across five lenses: motivation, evidence, alternatives, stakes, and timing. |
 | `redteam` | Generates 3-5 concrete failure scenarios with likelihood estimates, trigger events, cascade effects, early warning signs, and mitigations. Includes an overall vulnerability assessment. |
-| `premortem` | Gary Klein's prospective hindsight: "It failed. Write the postmortem from the future." Produces a full postmortem with narrative, timeline, root causes, missed signals, and lessons learned. |
+| `premortem` | Prospective hindsight: "It failed. Write the postmortem from the future." Produces a full postmortem with narrative, timeline, root causes, missed signals, and lessons learned. |
 
 ## Configuration
 
@@ -87,9 +87,9 @@ This means:
 - **Instant response** — no additional network calls
 - **Works with any MCP client** — Claude Desktop, Claude Code, Cursor, VS Code
 
-## The Tenth Man Doctrine
+## Why Contrarian Analysis?
 
-After the intelligence failure of the 1973 Yom Kippur War, Israeli intelligence established a unit to challenge prevailing assumptions. The concept: if nine analysts reach the same conclusion, the tenth is obligated to assume they are wrong and investigate accordingly.
+When everyone agrees, blind spots thrive. Structured contrarian analysis ensures that every decision is stress-tested before execution — not by pessimism, but by discipline. If nine people reach the same conclusion, the tenth is obligated to assume they are wrong and investigate.
 
 Kontra operationalizes this principle as software.
 

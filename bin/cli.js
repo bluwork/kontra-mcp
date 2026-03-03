@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-import { spawnSync } from 'child_process';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const require = createRequire(import.meta.url);
 
 const args = process.argv.slice(2);
 
@@ -27,10 +29,10 @@ Environment Variables:
   KONTRA_LOG_LEVEL       Log verbosity (debug|info|warn|error). Default: info
 
 Modes:
-  counter    (Free)  Strongest possible argument against your decision
-  probe      (Pro)   Uncomfortable questions that expose reasoning gaps
-  redteam    (Pro)   Concrete failure scenarios with likelihood estimates
-  premortem  (Pro)   Future failure narrative using Gary Klein's technique
+  counter    Strongest possible argument against your decision
+  probe      Uncomfortable questions that expose reasoning gaps
+  redteam    Concrete failure scenarios with likelihood estimates
+  premortem  Future failure narrative using prospective hindsight
 
 Learn more: https://github.com/bluwork/kontra-mcp
 `;
@@ -42,9 +44,8 @@ if (args.includes('--help') || args.includes('-h')) {
 
 if (args.includes('--version') || args.includes('-v')) {
   try {
-    const packageJsonPath = join(__dirname, '..', 'package.json');
-    const packageJson = await import(packageJsonPath, { with: { type: 'json' } });
-    console.log(`Kontra MCP v${packageJson.default.version}`);
+    const packageJson = require('../package.json');
+    console.log(`Kontra MCP v${packageJson.version}`);
     process.exit(0);
   } catch (error) {
     console.error(
@@ -56,9 +57,15 @@ if (args.includes('--version') || args.includes('-v')) {
 }
 
 const serverPath = join(__dirname, '..', 'dist', 'index.js');
-const nodeProcess = spawnSync('node', [serverPath, ...args], {
+const nodeProcess = spawnSync('node', [serverPath], {
   stdio: 'inherit',
-  shell: process.platform === 'win32',
 });
 
-process.exit(nodeProcess.status || 0);
+if (nodeProcess.error) {
+  process.stderr.write(
+    `kontra-mcp: failed to start server: ${nodeProcess.error.message}\n`
+  );
+  process.exit(1);
+}
+
+process.exit(nodeProcess.status ?? 1);

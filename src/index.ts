@@ -7,7 +7,7 @@ logger.setLogLevel(config.logLevel);
 
 let isShuttingDown = false;
 
-async function shutdown(): Promise<void> {
+function shutdown(): void {
   if (isShuttingDown) return;
   isShuttingDown = true;
 

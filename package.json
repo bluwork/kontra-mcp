@@ -14,7 +14,6 @@
     "watch": "tsc --watch",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepare": "chmod +x bin/cli.js",
     "prepublishOnly": "tsc"
   },
   "bin": {
@@ -32,11 +31,20 @@
     "claude",
     "ai-assistant"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bluwork/kontra-mcp.git"
+  },
+  "homepage": "https://github.com/bluwork/kontra-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/bluwork/kontra-mcp/issues"
+  },
   "author": "Boban Lukic <boban@lukic.engineering>",
   "license": "MIT",
   "files": [
     "dist",
     "bin",
+    "package.json",
     "README.md",
     "LICENSE"
   ],

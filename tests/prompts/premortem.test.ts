@@ -15,9 +15,8 @@ describe('buildPremortemPrompt', () => {
     expect(prompt).toContain('the failure has already happened');
   });
 
-  it('references Gary Klein and prospective hindsight', () => {
+  it('references prospective hindsight technique', () => {
     const prompt = buildPremortemPrompt(statement);
-    expect(prompt).toContain('Gary Klein');
     expect(prompt).toContain('prospective hindsight');
   });
 

@@ -19,17 +19,17 @@ const kontraSchema = {
   context: z.string().optional().describe('Additional background, constraints, or data relevant to the decision'),
   mode: z
     .enum(['counter', 'probe', 'redteam', 'premortem'])
-    .default('counter')
-    .describe('Analysis mode. "counter" is free. Others require Kontra Pro.'),
+    .optional()
+    .describe('Analysis mode: "counter" for contrarian analysis, "probe" for deep questioning, "redteam" for adversarial testing, "premortem" for failure scenario analysis.'),
 };
 
-export function registerKontraTool(server: McpServer, defaultMode: KontraMode): void {
+export function registerKontraTools(server: McpServer, defaultMode: KontraMode): void {
   server.tool(
     'kontra',
     'The Tenth Man Protocol — structured contrarian analysis. Challenges your decisions by identifying blind spots, hidden assumptions, counter-arguments, and failure scenarios. Provide a statement to analyze and optionally additional context.',
     kontraSchema,
     async (args) => {
-      const mode = args.mode || defaultMode;
+      const mode = args.mode ?? defaultMode;
 
       logger.info('kontra tool called', { mode, statementLength: args.statement.length });
 
