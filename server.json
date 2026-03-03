@@ -2,7 +2,6 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-16/server.schema.json",
   "name": "io.github.bluwork/kontra-mcp",
   "description": "The Tenth Man Protocol — structured contrarian analysis for decision-makers via MCP",
-  "status": "active",
   "repository": {
     "url": "https://github.com/bluwork/kontra-mcp",
     "source": "github"
