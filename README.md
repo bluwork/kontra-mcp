@@ -6,7 +6,7 @@
 
 An MCP tool that stress-tests your decisions with structured contrarian analysis — so blind spots surface before consequences do.
 
-[![npm](https://img.shields.io/npm/v/kontra-mcp)](https://www.npmjs.com/package/kontra-mcp) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/kontra-mcp)](https://www.npmjs.com/package/kontra-mcp) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 ## What You Get
 
@@ -183,4 +183,4 @@ Analysis quality scales with model capability. Stronger models produce sharper, 
 
 ## License
 
-MIT
+Apache-2.0
